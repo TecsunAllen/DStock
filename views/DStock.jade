@@ -1,11 +1,5 @@
 extends layout
 block content
-  div#appContainer(
-    style=`position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;`)
-  script(src="/javascripts/lib/three.min.js")
-  script(src="/javascripts/lib/WGS.js")
-  script(src="/javascripts/main.js")
+  div#AppContainer(
+    style="position: absolute;top: 0;bottom: 0;left: 0;right: 0;")
+  script(src="/javascripts/bundle.js")

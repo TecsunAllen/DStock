@@ -5,7 +5,7 @@ var WGS = function(target,store){
         renderer:new THREE.WebGLRenderer(),
         scene:new THREE.Scene(),
         camera:null,
-        meshes:[]
+        _3dObjects:[]
     },store);
 
     var self = this;
@@ -17,17 +17,17 @@ var WGS = function(target,store){
         }
     });
 
-    this.container.onresize = ()=>{
+    window.onresize = ()=>{
         var width = this.container.clientWidth;
         var height = this.container.clientHeight;
-        camera.aspect = width/height;
+        this.store.camera.aspect = width/height;
         this.isNeedRefresh = true;
     };
 
 
     this.render=function(animattionFun){
         //console.time("render");
-        const {renderer,scene,camera,meshes} = this.store;
+        const {renderer,scene,camera,_3dObjects} = this.store;
         var width = this.container.clientWidth;
         var height = this.container.clientHeight;
         if(this.isNeedRefresh){ 
@@ -36,7 +36,7 @@ var WGS = function(target,store){
             scene.children = [];
             camera.updateProjectionMatrix();
             scene.add(camera);
-            meshes.forEach(element => {
+            _3dObjects.forEach(element => {
                 scene.add(element);
             });
             this.isNeedRefresh = false;
