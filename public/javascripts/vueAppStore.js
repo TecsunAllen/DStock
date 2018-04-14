@@ -5,8 +5,7 @@ import StockManager from './services/stockManager.js';
 Vue.use(Vuex);
 const store = new Vuex.Store({
   state: {
-    queryShareCodes:[],
-    todayShareCodes: []
+    stockList:["SH000016"]
   },
   mutations: {
     initData(){

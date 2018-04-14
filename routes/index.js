@@ -15,6 +15,11 @@ router.get('/DStock', function(req, res, next) {
 });
 
 
+router.get('/SaveStock', function (req, res) {
+    var arg = url.parse(req.url, true).query;
+    
+});
+
 router.get('/GetUrlResultProxy', function (req, res) {
   var arg = url.parse(req.url, true).query;
   getUrlHttpsProxy(arg.url,function(result){

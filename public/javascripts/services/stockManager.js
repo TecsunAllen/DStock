@@ -1,10 +1,11 @@
 async function queryAllStockData(code){
     let response =  await new Promise(function(resolve,reject){
-        var xhr = new XMLHttpRequest();
-       
+        var xhr = new XMLHttpRequest();   
         var data = JSON.stringify({
         });
-        xhr.open('GET',`/GetUrlResultProxy?url=${encodeURIComponent(`https://xueqiu.com/stock/forchart/stocklist.json?symbol=${code}&period=all`)}`,true);
+        var url =`https://xueqiu.com/stock/forchartk/stocklist.json?symbol=${code}&period=1day&type=normal
+        &begin=${0}&end=${(new Date()).getTime()}`;
+        xhr.open('GET',`/GetUrlResultProxy?url=${url}`,true);
         xhr.onload=function(ev){
           resolve(ev.currentTarget.response);
         };
