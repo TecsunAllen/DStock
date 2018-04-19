@@ -3,9 +3,11 @@ async function queryAllStockData(code){
         var xhr = new XMLHttpRequest();   
         var data = JSON.stringify({
         });
-        var url =`https://xueqiu.com/stock/forchartk/stocklist.json?symbol=${code}&period=1day&type=normal
-        &begin=${0}&end=${(new Date()).getTime()}`;
-        xhr.open('GET',`/GetUrlResultProxy?url=${url}`,true);
+        //var url =`https://xueqiu.com/stock/forchartk/stocklist.json?symbol=${code}&period=1day&type=normal
+        //&begin=${0}&end=${(new Date()).getTime()}`;
+        var url = "/javascripts/services/sz50StockData.json";
+        xhr.open('GET',url,true);
+        //xhr.open('GET',`/GetUrlResultProxy?url=${url}`,true);
         xhr.onload=function(ev){
           resolve(ev.currentTarget.response);
         };

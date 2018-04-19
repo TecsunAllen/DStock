@@ -8,7 +8,8 @@
             </ul>
         </div>
         <div class="stockBody">
-          <canvas />
+          <span v-show="false">{{stockData.stock }}</span>
+          <canvas ref="canvas" />
         </div>
     </div>
 </template>
@@ -23,9 +24,8 @@ export default {
     stockList(){
       return this.$store.state.stockList;
     },
-    isQuerying() {
-      var share = this.$store.state.queryShareCodes;
-      return share.length > 0;
+    stockData() {
+      return this.$store.state.stockData;
     }
   },
   methods: {
@@ -34,11 +34,25 @@ export default {
       this.$store.commit("actionController", ev);
     }
   },
-  created: function() {},
-  beforeUpdate: function() {},
+  created: function() {
+    
+  },
+  mounted:function(){
+    resizeCanvas(this.$refs.canvas);
+  },
+  beforeUpdate: function() {
+    resizeCanvas(this.$refs.canvas);
+  },
   components: {
   }
 };
+
+
+function resizeCanvas(canvas){
+    var parent = canvas.parentElement;
+    canvas.width = parent.clientWidth;
+    canvas.height = parent.clientHeight;  
+}
 </script>
 
 
@@ -54,6 +68,20 @@ body {
   font-family: DIN, "Microsoft YaHei", Arial, sans-serif;
   font-size: 14px;
   font-weight: 700;
+}
+.shareApp{
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left:0;
+  right:0;
+  display: flex;
+}
+.shareApp .stockList{
+  flex:1;
+}
+.shareApp .stockBody{
+  flex:6;
 }
 
 </style>
