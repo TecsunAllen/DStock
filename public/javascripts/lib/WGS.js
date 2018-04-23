@@ -1,4 +1,5 @@
-var WGS = function(target,store){
+import * as THREE from 'three';
+var wgs = function(target,store){
     this.isNeedRefresh = true;
     this.container = target;
     this.store=Object.assign({
@@ -47,3 +48,4 @@ var WGS = function(target,store){
         //console.timeEnd("render");
     }
 }
+export default wgs;

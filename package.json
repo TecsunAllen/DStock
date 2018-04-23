@@ -28,6 +28,7 @@
     "vue-template-compiler": "^2.5.8",
     "vuex": "^3.0.1",
     "webpack": "^3.11.0",
-    "webpack-dev-server": "^2.11.2"
+    "webpack-dev-server": "^2.11.2",
+    "three": "latest"
   }
 }
