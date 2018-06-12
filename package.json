@@ -6,6 +6,7 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "cookie-parser": "~1.4.3",
@@ -14,10 +15,12 @@
     "express": "~4.16.0",
     "http-errors": "~1.6.2",
     "jade": "~1.11.0",
+    "jquery": "^3.3.1",
     "morgan": "~1.9.0",
     "request": "^2.85.0",
     "style-loader": "latest",
     "sync-exec": "^0.6.2",
+    "three": "latest",
     "url-loader": "latest",
     "vue": "^2.5.3",
     "vue-hot-reload-api": "^2.2.0",
@@ -28,7 +31,6 @@
     "vue-template-compiler": "^2.5.8",
     "vuex": "^3.0.1",
     "webpack": "^3.11.0",
-    "webpack-dev-server": "^2.11.2",
-    "three": "latest"
+    "webpack-dev-server": "^2.11.2"
   }
 }

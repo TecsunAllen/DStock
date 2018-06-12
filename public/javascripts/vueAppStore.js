@@ -13,6 +13,7 @@ const store = new Vuex.Store({
     initData(){
       var test = new webRender(1,{});
       getStockDataByCode("SH000016");
+
     },
     renderCanvas(canvas,state){
       
@@ -24,6 +25,8 @@ const store = new Vuex.Store({
 
 async function getStockDataByCode(code){
   let data = await StockManager.queryAllStockData(code);
+  let data2 = await StockManager.searFunds("国泰");
+  let data3 = await StockManager.getFundInfo("160628");
   //StockManager.queryAllStockData("SH000016");
   store.state.stockData = data;
 }
