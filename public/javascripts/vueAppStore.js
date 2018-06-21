@@ -2,7 +2,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import StockManager from './services/stockManager.js';
-import webRender from './services/webRender.js';
+//import webRender from './services/webRender.js';
 Vue.use(Vuex);
 const store = new Vuex.Store({
   state: {
@@ -11,7 +11,7 @@ const store = new Vuex.Store({
   },
   mutations: {
     initData(){
-      var test = new webRender(1,{});
+      //var test = new webRender(1,{});
       getStockDataByCode("SH000016");
 
     },
